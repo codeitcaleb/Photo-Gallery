@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
-
+gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.1'
 # Use sqlite3 as the database for Active Record
@@ -26,6 +26,7 @@ gem 'devise-bootstrap-views'
 gem 'omniauth-github'
 gem 'rename'
 gem "awesome_print", require: "ap"
+# gem 'lograge'
 # Use Active Storage variant
 
 # Use Active Storage variant

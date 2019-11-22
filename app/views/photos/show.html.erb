@@ -1,0 +1,9 @@
+<%= link_to 'Home', user_photos_path(current_user) %>
+<br>
+<%= image_tag url_for(@photo.image) if @photo.image.attached? %>
+<br>
+<h3><%= @photo.location.city %></h3>
+<p><%= @photo.caption %></p>
+<!--Add Edit Photo Link/Button -->
+<%= link_to 'Edit', edit_user_photo_path(current_user, @photo) %>
+<%= link_to 'Delete', user_photo_path(current_user, @photo), method: :delete %>

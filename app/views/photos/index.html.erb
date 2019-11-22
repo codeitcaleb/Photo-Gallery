@@ -1,0 +1,12 @@
+<%= link_to 'Add a New Photo', new_user_photo_path(current_user) %>
+<br>
+<% @photos.each do |photo| %>
+  <%= image_tag(photo.image.variant(resize: "250x200")) if photo.image.attached? %>
+  <br>
+  <%= link_to 'View Photo', user_photo_path(current_user, photo) %>
+  <br> 
+  <%= photo.location.city %>
+  <br>
+  <%= photo.caption %>
+  <br>
+<% end %>

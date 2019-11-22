@@ -1,0 +1,31 @@
+<%= link_to 'Home', user_photos_path(current_user) %>
+<br>
+<h2>Upload a Photo</h2>
+
+<%= form_for [@user, @photo] do |f| %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+  <br>
+  <%= f.fields_for :location do |location| %>
+      <%= location.label :city %>
+      <%= location.text_field :city %>
+  <% end %>
+  <br>
+  <%= f.label :caption %>
+  <%= f.text_field :caption %>
+  <br>
+  
+  <%= f.submit %>
+
+<% end %>
+
+<% if @photo.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @photo.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+

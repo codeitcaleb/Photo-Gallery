@@ -1,0 +1,19 @@
+<%= link_to 'Home', user_photos_path(current_user) %>
+<br>
+<h1>Edit Photo</h2>
+
+<%= form_for [@user, @photo] do |f| %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+  <br>
+  
+  <%= f.hidden_field :location_id, value: @photo.location.id %>
+
+  <br>
+  <%= f.label :caption %>
+  <%= f.text_field :caption %>
+  <br>
+
+  <%= f.submit %>
+
+<% end %>
