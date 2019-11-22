@@ -4,6 +4,7 @@ class Photo < ApplicationRecord
   belongs_to :user
   belongs_to :location
   
+  validates :image, presence: true
   validates :caption, presence: true
   validates :location, presence: true
 
